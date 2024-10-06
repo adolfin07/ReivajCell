@@ -8,11 +8,251 @@
 }
 
 :root {
-    --white-: #ebebeb;
+    --white-: #f0f0f0;
+    --black-: #010101;
+
     --blue-: #004673;
     --red-: #E50110;
+    --transparent-txt: #0101019c;
 }
 
 body {
     background-color: var(--white-);
+}
+
+/*header*/
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #004673;
+
+    .header_top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0px;
+
+        img {
+            width: 35%;
+            filter: drop-shadow(10px 10px 10px rgba(24, 4, 4, 0.5));
+        }
+    }
+
+    .navbar {
+        width: 50%;
+        padding-bottom: 20px;
+
+        ul {
+
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+
+            li {
+                a {
+                    position: relative;
+                    text-decoration: none;
+                    color: var(--white-);
+                    transition: all 300ms ease;
+                }
+
+                a::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--white-);
+                    transition: width 0.3s ease;
+                }
+
+                a:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*main*/
+.main {
+    margin-top: 40px;
+    display: flex;
+    padding: 55px 0px;
+
+    .main_left {
+        padding: 20px 105px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 50%;
+        min-width: 50%;
+        animation-name: slideLeft;
+        animation-duration: 300ms;
+        animation-timing-function: linear;
+        animation-delay: 100ms;
+        overflow: hidden;
+
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: var(--transparent-txt);
+            margin-bottom: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            background: var(--blue-);
+            align-self: flex-start;
+            color: var(--white-);
+            padding: 7px 25px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px var(--black-);
+            transition: all 200ms ease-in;
+        }
+
+
+
+
+    }
+
+    .main_right {
+        flex-basis: 50%;
+        min-width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 70%;
+            filter: drop-shadow(9px 15px 7px rgba(24, 4, 4, 0.5));
+            pointer-events: none;
+        }
+    }
+
+
+}
+
+/*services*/
+.services {
+
+    display: flex;
+    flex-direction: column;
+
+
+    .services_top {
+
+        display: flex;
+
+        div {
+            width: 34%;
+            display: flex;
+            padding: 15px 30px;
+            background-color: var(--blue-);
+
+            .img {
+                width: 50%;
+
+                img {
+                    width: 100%;
+
+                }
+            }
+
+            .txt {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h3 {
+                    font-size: 24px;
+                    color: var(--white-);
+                }
+
+                p {
+                    color: var(--white-);
+                }
+            }
+        }
+
+        .diff {
+            background-color: #00477388;
+
+            div {
+                background-color: transparent;
+            }
+
+        }
+
+    }
+
+
+    .services_bottom {
+    
+        display: flex;
+        padding: 40px 15px;
+
+        .facilities {
+            
+            width: 34%;
+            display: flex;
+
+
+            .logo-font {
+          
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 25px;
+
+                i {
+                    font-size: 45px;
+                    background: #615f5f59;
+                    padding: 20px;
+                    border-radius: 50%;
+                    color: var(--blue-);
+                }
+            }
+
+            .txt {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+               
+
+                h4 {
+                    text-transform: uppercase;
+                }
+
+                p {
+                    color: var(--transparent-txt);
+
+                }
+            }
+        }
+    }
+}
+
+
+/*keyframes*/
+
+@keyframes slideLeft {
+    0% {
+        transform: translateY(50px);
+        filter: blur(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
